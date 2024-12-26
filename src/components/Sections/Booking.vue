@@ -32,6 +32,7 @@
               <label for="name" class="block text-lg font-lora mb-2 text-pink-900">Your Name</label>
               <input
                 id="name"
+                v-model="formData.name"
                 type="text"
                 class="w-full px-4 py-2 rounded-lg border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
                 placeholder="Enter your name"
@@ -42,6 +43,7 @@
               <label for="email" class="block text-lg font-lora mb-2 text-pink-900">Your Email</label>
               <input
                 id="email"
+                v-model="formData.email"
                 type="email"
                 class="w-full px-4 py-2 rounded-lg border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
                 placeholder="Enter your email"
@@ -52,6 +54,7 @@
               <label for="message" class="block text-lg font-lora mb-2 text-pink-900">Your Message</label>
               <textarea
                 id="message"
+                v-model="formData.message"
                 rows="4"
                 class="w-full px-4 py-2 rounded-lg border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
                 placeholder="Write your message here"
@@ -72,9 +75,38 @@
 
 <script>
 export default {
+  data() {
+    return {
+      formData: {
+        name: '',
+        email: '',
+        message: ''
+      }
+    }
+  },
   methods: {
     handleSubmit() {
-      alert("Message sent! Thank you for reaching out.");
+      // Construct email body with proper formatting
+      const emailBody = `
+Name: ${this.formData.name}
+Email: ${this.formData.email}
+
+Message:
+${this.formData.message}
+      `.trim();
+
+      // Construct mailto URL with encoded parameters
+      const mailtoUrl = `mailto:sandraowuso3188@gmail.com?subject=Booking Request from ${encodeURIComponent(this.formData.name)}&body=${encodeURIComponent(emailBody)}`;
+
+      // Open default email client
+      window.location.href = mailtoUrl;
+
+      // Reset form after submission
+      this.formData = {
+        name: '',
+        email: '',
+        message: ''
+      };
     },
   },
 };
