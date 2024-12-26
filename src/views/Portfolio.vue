@@ -209,6 +209,13 @@ export default {
       ]
     }
   },
+  mounted() {
+    document.title = "Sandys___Glam | Portfolio";
+    const descriptionMetaTag = document.querySelector('meta[name="description"]');
+    if (descriptionMetaTag) {
+      descriptionMetaTag.setAttribute('content', "Explore the beauty and elegance of Sandys___Glam.");
+    }
+  },
   computed: {
     filteredItems() {
       const filtered = this.currentCategory === 'All'

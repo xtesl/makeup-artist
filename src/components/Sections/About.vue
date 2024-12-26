@@ -13,7 +13,7 @@
     <div class="relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-dancing font-bold text-pink-900 static-glow">About Sandys_Glam</h2>
+        <h2 class="text-4xl md:text-5xl font-dancing font-bold text-pink-900 static-glow">About Sandys___Glam</h2>
         <p class="mt-2 text-lg md:text-xl font-lora text-pink-700">Transforming Beauty, One Glam at a Time</p>
       </div>
 
@@ -21,11 +21,11 @@
       <div class="max-w-4xl mx-auto px-4 md:px-8 text-left">
         <div class="space-y-6 backdrop-blur-sm bg-white/70 p-8 rounded-2xl shadow border border-pink-100">
           <p class="text-lg md:text-xl font-lora text-pink-700 leading-relaxed">
-            Welcome to <span class="font-bold">Sandys_Glam</span>, a professional makeup artistry service based in Ghana, offering top-tier makeup services for all occasions.
+            Welcome to <span class="font-bold">Sandys___Glam</span>, a professional makeup artistry service based in Ghana, offering top-tier makeup services for all occasions.
           </p>
 
           <p class="text-lg md:text-xl font-lora text-pink-700 leading-relaxed">
-            Founded by <span class="font-bold">Sandy Owusu Boakye</span>, we specialize in creating stunning, personalized looks that enhance your natural beauty and leave you feeling confident.
+            Founded by <span class="font-bold">Sandra Owusu Boakye</span>, we specialize in creating stunning, personalized looks that enhance your natural beauty and leave you feeling confident.
           </p>
 
           <p class="text-lg md:text-xl font-lora text-pink-700 leading-relaxed">
@@ -33,7 +33,7 @@
           </p>
 
           <p class="text-lg md:text-xl font-lora text-pink-700 leading-relaxed">
-            At Sandys_Glam, we use high-quality products to ensure long-lasting, flawless looks that are tailored to your unique features.
+            At Sandys___Glam, we use high-quality products to ensure long-lasting, flawless looks that are tailored to your unique features.
           </p>
 
           <p class="text-lg md:text-xl font-lora text-pink-700 leading-relaxed">

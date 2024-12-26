@@ -8,12 +8,12 @@ import { RouterLink } from 'vue-router';
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <RouterLink to="/" class="flex items-center space-x-3 rtl:space-x-reverse group">
           <img src="/logo.png" class="h-8 transition-transform duration-300 group-hover:scale-110" alt="logo" />
-          <span class="self-center text-2xl font-dancing font-semibold whitespace-nowrap text-pink-800 transition-colors duration-300 group-hover:text-pink-600">Sandys_Glam</span>
+          <span class="self-center text-2xl font-dancing font-semibold whitespace-nowrap text-pink-800 transition-colors duration-300 group-hover:text-pink-600">Sandys___Glam</span>
         </RouterLink>
         
         <div class="flex md:order-2 items-center space-x-4">
           <div class="hidden md:flex space-x-4">
-            <a href="#" class="text-pink-600 hover:text-pink-800 transition-colors duration-300">
+            <a href="https://www.instagram.com/sandys___glam/" class="text-pink-600 hover:text-pink-800 transition-colors duration-300">
               <i class="pi pi-instagram text-xl"></i>
             </a>
             <a href="#" class="text-pink-600 hover:text-pink-800 transition-colors duration-300">
@@ -92,7 +92,7 @@ import { RouterLink } from 'vue-router';
               </li>
               <li class="mt-2 pt-4 border-t border-pink-100">
                 <div class="flex justify-center gap-6">
-                  <a href="#" class="p-2 rounded-full text-pink-600 hover:text-pink-800 hover:bg-pink-50 transition-all duration-300">
+                  <a href="https://www.instagram.com/sandys___glam/" class="p-2 rounded-full text-pink-600 hover:text-pink-800 hover:bg-pink-50 transition-all duration-300">
                     <i class="pi pi-instagram text-xl"></i>
                   </a>
                   <a href="#" class="p-2 rounded-full text-pink-600 hover:text-pink-800 hover:bg-pink-50 transition-all duration-300">
