@@ -5,12 +5,15 @@
       <h2 class="text-4xl md:text-5xl font-dancing font-bold text-pink-900">Spotlight</h2>
       <p class="mt-2 text-lg md:text-xl font-lora text-pink-700">A glimpse into my artistry and passion.</p>
     </div>
+
     <!-- Showcase Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8">
+
       <!-- Gallery Items -->
       <div v-for="(item, index) in visibleItems"
            :key="index"
-           class="relative group">
+           @click="openModal(index)"
+           class="relative group cursor-pointer">
         <!-- First image with caption below -->
         <div v-if="index === 0" class="flex flex-col">
           <div class="rounded-lg shadow-lg overflow-hidden aspect-[4/5]">
@@ -30,11 +33,15 @@
             v-if="item.type === 'image'"
             :src="item.src"
             :alt="item.alt"
+            v-bind:class="{ 'opacity-0': !isImageLoaded }"
+            @load="onImageLoaded"
             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
           <video
             v-else-if="item.type === 'video'"
             :src="item.src"
+            v-bind:class="{ 'opacity-0': !isVideoLoaded }"
+            @loadeddata="onVideoLoaded"
             autoplay
             loop
             muted
@@ -50,9 +57,59 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <Transition name="fade">
+  <div v-if="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+    <div class="relative w-full max-w-5xl max-h-[90vh] flex items-center">
+      <button @click="closeModal" class="absolute -top-12 right-0 text-white hover:text-pink-500 transition-colors z-10">
+        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <button @click="prevItem" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-pink-500 transition-colors z-10">
+        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      
+      <button @click="nextItem" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-pink-500 transition-colors z-10">
+        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <div class="w-full h-full flex flex-col">
+        <div class="relative w-full h-full flex items-center justify-center bg-black rounded-lg overflow-hidden">
+          <video v-if="currentModalItem.type === 'video'"
+            :src="currentModalItem.src"
+            class="max-w-full max-h-[80vh] object-contain"
+            autoplay
+            loop
+            muted
+            playsinline
+            controls
+          ></video>
+          <img v-else
+            :src="currentModalItem.src"
+            :alt="currentModalItem.alt"
+            class="max-w-full max-h-[80vh] object-contain"
+          >
+          
+          <div v-if="currentModalItem.title || currentModalItem.description" 
+            class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent text-white">
+            <h3 v-if="currentModalItem.title" class="text-lg font-dancing font-bold">{{ currentModalItem.title }}</h3>
+            <p v-if="currentModalItem.description" class="text-sm font-lora">{{ currentModalItem.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Transition>
+
     <!-- Gallery Controls -->
     <div class="text-center mt-12 space-y-4">
-      <!-- View More Button -->
       <button
         v-if="hasMoreItems"
         @click="loadMore"
@@ -69,7 +126,7 @@
           <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
       </button>
-      <!-- Show Less Button -->
+
       <button
         v-if="canShowLess"
         @click="showLess"
@@ -86,6 +143,7 @@
         </svg>
       </button>
     </div>
+
     <!-- Portfolio Link Section -->
     <div class="text-center mt-16">
       <p class="text-lg font-lora text-pink-700 mb-4">Want to see more of my work?</p>
@@ -106,6 +164,7 @@
     </div>
   </section>
 </template>
+
 <script>
 export default {
   data() {
@@ -113,6 +172,17 @@ export default {
       initialItems: 6,
       loadMoreItems: 3,
       currentPage: 1,
+      isModalOpen: false,
+      currentModalIndex: 0,
+      isVideoLoaded: false,
+      isImageLoaded: false,
+      observer: null,
+      isLoading: true,
+      intersectionOptions: {
+        root: null,
+        rootMargin: '50px',
+        threshold: 0.1
+      },
       galleryItems: [
         {
           type: 'image',
@@ -221,6 +291,14 @@ export default {
       ]
     }
   },
+  mounted() {
+    this.setupIntersectionObserver()
+  },
+  beforeUnmount() {
+    if (this.observer) {
+      this.observer.disconnect()
+    }
+  },
   computed: {
     visibleItems() {
       const itemsToShow = this.initialItems + (this.currentPage - 1) * this.loadMoreItems
@@ -234,18 +312,67 @@ export default {
     },
     canShowLess() {
       return this.visibleItems.length > this.initialItems
+    },
+    currentModalItem() {
+      return this.galleryItems[this.currentModalIndex]
     }
   },
   methods: {
+    onModalImageLoad() {
+    this.isLoading = false;
+  },
+  openModal(index) {
+    this.currentModalIndex = index;
+    this.isModalOpen = true;
+    this.isLoading = true;
+  },
     loadMore() {
       this.currentPage += 1
     },
     showLess() {
       this.currentPage = 1
+    },
+    openModal(index) {
+      this.currentModalIndex = index
+      this.isModalOpen = true
+    },
+    closeModal() {
+      this.isModalOpen = false
+    },
+    nextItem() {
+      this.currentModalIndex = (this.currentModalIndex + 1) % this.galleryItems.length
+    },
+    prevItem() {
+      this.currentModalIndex = (this.currentModalIndex - 1 + this.galleryItems.length) % this.galleryItems.length
+    },
+    setupIntersectionObserver() {
+      this.observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const mediaElement = entry.target
+            if (mediaElement.tagName === 'VIDEO') {
+              mediaElement.load()
+            }
+            this.observer.unobserve(mediaElement)
+          }
+        })
+      }, this.intersectionOptions)
+
+      this.$nextTick(() => {
+        const mediaElements = document.querySelectorAll('video, img')
+        mediaElements.forEach(el => this.observer.observe(el))
+      })
+    },
+    onVideoLoaded() {
+      this.isVideoLoaded = true
+    },
+    onImageLoaded() {
+      this.isImageLoaded = true
     }
   }
 }
 </script>
+
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lora:wght@400;600&display=swap');
 .font-dancing {
@@ -254,18 +381,33 @@ export default {
 .font-lora {
   font-family: 'Lora', serif;
 }
-/* Add smooth animation for new items */
-.grid > div {
-  animation: fadeInScale 0.5s ease-out;
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
 }
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+::-webkit-media-controls-timeline {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+video::-webkit-media-controls-panel {
+  background-image: linear-gradient(transparent, transparent) !important;
+}
+
+.group-hover\:scale-110 {
+  will-change: transform;
+}
+
+/* Use transform instead of opacity for transitions */
+.fade-enter-active,
+.fade-leave-active {
+  will-change: transform, opacity;
 }
 </style>
