@@ -11,10 +11,10 @@ import Location from '@/components/Sections/Location.vue';
 <template>
   <main>
    <Hero />
-   <About />
+   <About id="about-section"/>
    <Spotlight />
    <Services />
-   <Booking />
+   <Booking id="booking-section"/>
    <OpenHours />
    <Location />
   </main>

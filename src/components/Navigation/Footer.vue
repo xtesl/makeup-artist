@@ -46,7 +46,7 @@
             <div class="space-y-2">
               <p class="text-pink-600 flex items-center justify-center md:justify-end gap-2">
                 <i class="pi pi-phone"></i>
-                <span>+233 (239) 670-049</span>
+                <span>+233 (234) 670-049</span>
               </p>
               <p class="text-pink-600 flex items-center justify-center md:justify-end gap-2">
                 <i class="pi pi-map-marker"></i>

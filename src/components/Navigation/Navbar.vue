@@ -44,10 +44,10 @@ import { RouterLink } from 'vue-router';
               </RouterLink>
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 text-pink-800 md:p-0 relative group transition-colors duration-300 hover:text-pink-900">
+              <router-link to="/#about-section" class="block py-2 px-3 text-pink-800 md:p-0 relative group transition-colors duration-300 hover:text-pink-900">
                 About
                 <span class="absolute inset-x-0 bottom-0 h-0.5 bg-pink-400 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-              </a>
+              </router-link>
             </li>
             <li>
               <RouterLink to="/portfolio" class="block py-2 px-3 text-pink-800 md:p-0 relative group transition-colors duration-300 hover:text-pink-900">
@@ -56,10 +56,10 @@ import { RouterLink } from 'vue-router';
               </RouterLink>
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 text-pink-800 md:p-0 relative group transition-colors duration-300 hover:text-pink-900">
-                Contact/Location
+              <router-link to="/#booking-section" class="block py-2 px-3 text-pink-800 md:p-0 relative group transition-colors duration-300 hover:text-pink-900">
+                Booking
                 <span class="absolute inset-x-0 bottom-0 h-0.5 bg-pink-400 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-              </a>
+              </router-link>
             </li>
           </ul>
 
@@ -73,10 +73,10 @@ import { RouterLink } from 'vue-router';
                 </RouterLink>
               </li>
               <li>
-                <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-pink-800 hover:bg-pink-50 transition-all duration-300">
+                <router-link to="/#about-section" class="flex items-center gap-3 p-3 rounded-xl text-pink-800 hover:bg-pink-50 transition-all duration-300">
                   <i class="pi pi-user text-lg"></i>
                   <span>About</span>
-                </a>
+                </router-link>
               </li>
               <li>
                 <RouterLink to="/portfolio" class="flex items-center gap-3 p-3 rounded-xl text-pink-800 hover:bg-pink-50 transition-all duration-300">
@@ -85,10 +85,10 @@ import { RouterLink } from 'vue-router';
                 </RouterLink>
               </li>
               <li>
-                <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-pink-800 hover:bg-pink-50 transition-all duration-300">
-                  <i class="pi pi-map-marker text-lg"></i>
-                  <span>Contact/Location</span>
-                </a>
+                <router-link to="/#booking-section" class="flex items-center gap-3 p-3 rounded-xl text-pink-800 hover:bg-pink-50 transition-all duration-300">
+                  <i class="pi pi-calendar text-lg"></i>
+                  <span>Booking</span>
+                </router-link>
               </li>
               <li class="mt-2 pt-4 border-t border-pink-100">
                 <div class="flex justify-center gap-6">

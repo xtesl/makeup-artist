@@ -17,11 +17,11 @@
           <h3 class="text-2xl font-bold mb-4 font-lora text-pink-900">Contact Info</h3>
           <p class="text-lg font-lora flex items-center mb-2">
             <i class="pi pi-envelope text-pink-500 mr-2"></i>
-            <span>Email:</span> makeupartist@example.com
+            <span>Email:</span> sandraowuso3188@gmail.com
           </p>
           <p class="text-lg font-lora flex items-center">
             <i class="pi pi-phone text-pink-500 mr-2"></i>
-            <span>Phone:</span> (123) 456-7890
+            <span>Phone:</span> +233 (234) 670-049
           </p>
         </div>
 
