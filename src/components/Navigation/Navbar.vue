@@ -7,8 +7,8 @@ import { RouterLink } from 'vue-router';
     <div class="nav-overlay">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <RouterLink to="/" class="flex items-center space-x-3 rtl:space-x-reverse group">
-          <img src="/logo.png" class="h-8 transition-transform duration-300 group-hover:scale-110" alt="Flowbite Logo" />
-          <span class="self-center text-2xl font-dancing font-semibold whitespace-nowrap text-pink-800 transition-colors duration-300 group-hover:text-pink-600">Sandys Glam</span>
+          <img src="/logo.png" class="h-8 transition-transform duration-300 group-hover:scale-110" alt="logo" />
+          <span class="self-center text-2xl font-dancing font-semibold whitespace-nowrap text-pink-800 transition-colors duration-300 group-hover:text-pink-600">Sandys_Glam</span>
         </RouterLink>
         
         <div class="flex md:order-2 items-center space-x-4">
