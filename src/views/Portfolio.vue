@@ -132,7 +132,7 @@ export default {
       currentCategory: 'All',
       selectedIndex: null,
       visibleItems: 9,
-      categories: ['All', 'Bridal', 'Fashion', 'Events', 'Before/After'],
+      categories: ['All', 'Bridal', 'Fashion', 'Events', 'Before/After', 'Masterclass', "Behind the Glam", "Others"],
       portfolioItems: [
       {
           type: 'image',
@@ -140,6 +140,69 @@ export default {
           title: 'Bridal Glamour',
           category: 'Bridal',
           description: 'Elegant bridal makeup with a natural glow'
+        },
+        {
+          type: 'image',
+          src: '/images/others_1.jpg',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
+        {
+          type: 'image',
+          src: '/images/natural_1.jpg',
+          title: 'Fashion Editorial',
+          category: 'Fashion',
+          description: 'Bold editorial look for magazine shoot'
+        },
+        {
+          type: 'image',
+          src: '/images/others_2.jpg',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
+        {
+          type: 'image',
+          src: '/images/others_3.jpg',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
+        {
+          type: 'image',
+          src: '/images/others_4.jpg',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
+        {
+          type: 'image',
+          src: '/images/others_5.jpg',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
+        {
+          type: 'image',
+          src: '/images/others_6.jpg',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
+        {
+          type: 'video',
+          src: '/videos/beforeafter_3.mp4',
+          title: 'Makeup Transformation',
+          category: 'Masterclass',
+          description: 'A masterclass makeup art'
+        },
+        {
+          type: 'video',
+          src: '/videos/masterclass_2.mp4',
+          title: 'Makeup Transformation',
+          category: 'Masterclass',
+          description: 'A masterclass makeup art'
         },
         {
           type: 'video',
@@ -150,9 +213,30 @@ export default {
         },
         {
           type: 'video',
+          src: '/videos/behind_the_glam.mp4',
+          title: 'Makeup Transformation',
+          category: 'Behind the Glam',
+          description: 'Complete makeup transformation process'
+        },
+        {
+          type: 'video',
+          src: '/videos/beforeafter_5.mp4',
+          title: 'Makeup Transformation',
+          category: 'Before/After',
+          description: 'Complete makeup transformation'
+        },
+        {
+          type: 'video',
           src: '/videos/beforeafter_2.mp4',
           title: 'Makeup Transformation',
           category: 'Before/After',
+          description: 'Complete makeup transformation process'
+        },
+        {
+          type: 'video',
+          src: '/videos/behind_the_glam_1.mp4',
+          title: 'Makeup Transformation',
+          category: 'Behind the Glam',
           description: 'Complete makeup transformation process'
         },
         {
@@ -169,6 +253,7 @@ export default {
           category: 'Fashion',
           description: 'Bold editorial look for magazine shoot'
         },
+      
         {
           type: 'image',
           src: '/images/fashion_2.jpg',
@@ -192,6 +277,13 @@ export default {
           description: 'Event makeup'
         },
         {
+          type: 'video',
+          src: '/videos/behind_the_glam_2.mp4',
+          title: 'Makeup Transformation',
+          category: 'Behind the Glam',
+          description: 'Complete makeup transformation process'
+        },
+        {
           type: 'image',
           src: '/images/bridal_4.jpg',
           title: 'Bridal Process',
@@ -199,12 +291,40 @@ export default {
           description: 'Behind the scenes of bridal makeup'
         },
         {
+          type: 'video',
+          src: '/videos/behind_the_glam_3.mp4',
+          title: 'Makeup Transformation',
+          category: 'Behind the Glam',
+          description: 'Complete makeup transformation process'
+        },
+        {
           type: 'image',
           src: '/images/beforeafter_1.jpg',
           title: 'Natural Beauty',
           category: 'Before/After',
           description: 'Natural makeup enhancement'
-        }
+        },
+        {
+          type: 'video',
+          src: '/videos/natural_beauty.mp4',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
+        {
+          type: 'video',
+          src: '/videos/vid_1.mp4',
+          title: 'Makeup Transformation',
+          category: 'Before/After',
+          description: 'Amazing makeup transformation'
+        },
+        {
+          type: 'video',
+          src: '/videos/bg_vid.mp4',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
         // ... rest of your items ...
       ]
     }

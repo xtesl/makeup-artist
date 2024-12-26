@@ -17,7 +17,7 @@
           <h3 class="text-2xl font-bold mb-4 font-lora text-pink-900">Contact Info</h3>
           <p class="text-lg font-lora flex items-center mb-2">
             <i class="pi pi-envelope text-pink-500 mr-2"></i>
-            <span>Email:</span> sandraowuso3188@gmail.com
+            <span>Email:</span> sandraowusu3188@gmail.com
           </p>
           <p class="text-lg font-lora flex items-center">
             <i class="pi pi-phone text-pink-500 mr-2"></i>

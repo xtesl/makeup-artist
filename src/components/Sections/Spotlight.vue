@@ -50,22 +50,59 @@
         </div>
       </div>
     </div>
-    <!-- View More Button -->
-    <div class="text-center mt-12" v-if="hasMoreItems">
+    <!-- Gallery Controls -->
+    <div class="text-center mt-12 space-y-4">
+      <!-- View More Button -->
       <button
+        v-if="hasMoreItems"
         @click="loadMore"
         class="group inline-flex items-center justify-center px-8 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
       >
         <span class="mr-2">View More</span>
+        <span class="text-sm opacity-75">({{ remainingItems }} more)</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 transform transition-transform duration-300 group-hover:translate-y-1"
+          class="h-5 w-5 transform transition-transform duration-300 group-hover:translate-y-1 ml-2"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
           <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
       </button>
+      <!-- Show Less Button -->
+      <button
+        v-if="canShowLess"
+        @click="showLess"
+        class="group inline-flex items-center justify-center px-8 py-3 bg-white text-pink-900 border-2 border-pink-500 rounded-full hover:bg-pink-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      >
+        <span class="mr-2">Show Less</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 transform transition-transform duration-300 group-hover:-translate-y-1 ml-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+      </button>
+    </div>
+    <!-- Portfolio Link Section -->
+    <div class="text-center mt-16">
+      <p class="text-lg font-lora text-pink-700 mb-4">Want to see more of my work?</p>
+      <RouterLink
+        to="/portfolio" 
+        class="inline-flex items-center justify-center px-8 py-3 bg-white text-pink-900 border-2 border-pink-500 rounded-full hover:bg-pink-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group"
+      >
+        <span class="mr-2 font-dancing text-lg font-bold">View Full Portfolio</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </RouterLink>
     </div>
   </section>
 </template>
@@ -73,7 +110,8 @@
 export default {
   data() {
     return {
-      itemsPerPage: 6,
+      initialItems: 6,
+      loadMoreItems: 3,
       currentPage: 1,
       galleryItems: [
         {
@@ -125,6 +163,55 @@ export default {
           description: 'Timeless bridal looks'
         },
         {
+          type: "video",
+          src: "/videos/beforeafter_1.mp4",
+          alt: "before/after",
+          title: "",
+          description: ""
+        },
+        {
+          type: "video",
+          src: "/videos/beforeafter_2.mp4",
+          alt: "before/after",
+          title: "",
+          description: ""
+        },
+        {
+          type: "video",
+          src: "/videos/beforeafter_3.mp4",
+          alt: "before/after",
+          title: "",
+          description: ""
+        },
+        {
+          type: "video",
+          src: "/videos/natural_beauty.mp4",
+          alt: "natural beauty",
+          title: "",
+          description: ""
+        },
+        {
+          type: "video",
+          src: "/videos/vid_1.mp4",
+          alt: "natural beauty",
+          title: "",
+          description: ""
+        },
+        {
+          type: "video",
+          src: "/videos/masterclass_2.mp4",
+          alt: "masterclass",
+          title: "Masterclass",
+          description: ""
+        },
+        {
+          type: "video",
+          src: "/videos/beforeafter_5.mp4",
+          alt: "before/after",
+          title: "",
+          description: ""
+        },
+        {
           type: 'image',
           src: '/images/fashion_1.jpg',
           alt: 'Fashion Makeup',
@@ -136,15 +223,25 @@ export default {
   },
   computed: {
     visibleItems() {
-      return this.galleryItems.slice(0, this.itemsPerPage * this.currentPage)
+      const itemsToShow = this.initialItems + (this.currentPage - 1) * this.loadMoreItems
+      return this.galleryItems.slice(0, itemsToShow)
     },
     hasMoreItems() {
       return this.visibleItems.length < this.galleryItems.length
+    },
+    remainingItems() {
+      return this.galleryItems.length - this.visibleItems.length
+    },
+    canShowLess() {
+      return this.visibleItems.length > this.initialItems
     }
   },
   methods: {
     loadMore() {
       this.currentPage += 1
+    },
+    showLess() {
+      this.currentPage = 1
     }
   }
 }
