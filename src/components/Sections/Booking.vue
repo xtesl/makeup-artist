@@ -1,7 +1,7 @@
 <template>
-  <section class="relative w-full py-16 text-pink-900 background-animation">
-    <!-- Animated Grid Background -->
-    <div class="grid-background"></div>
+  <section class="relative w-full py-16 text-pink-900 static-background">
+    <!-- Static Grid Background -->
+    <div class="static-grid-background"></div>
     
     <div class="container mx-auto px-4 md:px-8 relative">
       <!-- Section Header -->
@@ -72,11 +72,11 @@
 
 <script>
 export default {
-methods: {
-  handleSubmit() {
-    alert("Message sent! Thank you for reaching out.");
+  methods: {
+    handleSubmit() {
+      alert("Message sent! Thank you for reaching out.");
+    },
   },
-},
 };
 </script>
 
@@ -84,72 +84,53 @@ methods: {
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lora:wght@400;600&display=swap');
 
 .font-dancing {
-font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', cursive;
 }
 
 .font-lora {
-font-family: 'Lora', serif;
+  font-family: 'Lora', serif;
 }
 
-.background-animation {
-background: linear-gradient(to right, #fff5f7, #ffffff);
-position: relative;
-overflow: hidden;
+.static-background {
+  background: linear-gradient(to right, #fff5f7, #ffffff);
+  position: relative;
+  overflow: hidden;
 }
 
-.grid-background {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-image: 
-  linear-gradient(to right, rgba(237, 100, 166, 0.1) 1px, transparent 1px),
-  linear-gradient(to bottom, rgba(237, 100, 166, 0.1) 1px, transparent 1px);
-background-size: 40px 40px;
-animation: moveGrid 15s linear infinite;
+.static-grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(237, 100, 166, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(237, 100, 166, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-.grid-background::before {
-content: '';
-position: absolute;
-width: 100%;
-height: 100%;
-background-image: radial-gradient(circle at 50% 50%, rgba(237, 100, 166, 0.1) 0%, transparent 10%);
-background-size: 60px 60px;
-animation: pulseGrid 4s ease-in-out infinite;
+.static-grid-background::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 50% 50%, rgba(237, 100, 166, 0.1) 0%, transparent 10%);
+  background-size: 60px 60px;
+  opacity: 0.7;
 }
 
-@keyframes moveGrid {
-0% {
-  transform: translateX(0) translateY(0);
-}
-100% {
-  transform: translateX(40px) translateY(40px);
-}
-}
-
-@keyframes pulseGrid {
-0%, 100% {
-  opacity: 0.5;
-}
-50% {
-  opacity: 1;
-}
-}
-
-/* Add some depth to the form containers */
+/* Subtle hover effect for form containers */
 form, .flex {
-position: relative;
-transition: transform 0.3s ease;
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
 form:hover, .flex:hover {
-transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 /* Smooth transitions for interactive elements */
 button, input, textarea {
-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 </style>

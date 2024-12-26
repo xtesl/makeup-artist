@@ -67,7 +67,7 @@ import { RouterLink } from 'vue-router';
           <div class="md:hidden mobile-menu-container">
             <ul class="flex flex-col gap-2 p-4 mt-4 rounded-2xl bg-white/90 backdrop-blur-md shadow-lg border border-pink-100">
               <li>
-                <RouterLink to="/home" class="flex items-center gap-3 p-3 rounded-xl text-pink-800 hover:bg-pink-50 transition-all duration-300">
+                <RouterLink to="/" class="flex items-center gap-3 p-3 rounded-xl text-pink-800 hover:bg-pink-50 transition-all duration-300">
                   <i class="pi pi-home text-lg"></i>
                   <span>Home</span>
                 </RouterLink>
@@ -79,10 +79,10 @@ import { RouterLink } from 'vue-router';
                 </a>
               </li>
               <li>
-                <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-pink-800 hover:bg-pink-50 transition-all duration-300">
+                <RouterLink to="/portfolio" class="flex items-center gap-3 p-3 rounded-xl text-pink-800 hover:bg-pink-50 transition-all duration-300">
                   <i class="pi pi-images text-lg"></i>
                   <span>Portfolio</span>
-                </a>
+                </RouterLink>
               </li>
               <li>
                 <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-pink-800 hover:bg-pink-50 transition-all duration-300">

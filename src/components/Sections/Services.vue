@@ -27,7 +27,7 @@
           <div v-for="(service, index) in services" :key="index" 
                class="service-card group"
                :style="{ 'animation-delay': `${index * 0.1}s` }">
-            <div class="relative p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-2xl border border-pink-100 overflow-hidden">
+            <div class="relative p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow transform transition-all duration-500 hover:scale-105 hover:shadow-2xl border border-pink-100 overflow-hidden">
               <div class="card-background absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div class="relative z-10">
                 <div class="flex justify-center mb-4 service-icon">
