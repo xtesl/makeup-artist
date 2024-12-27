@@ -193,6 +193,45 @@ export default {
         },
         {
           type: 'image',
+          src: '/images/bridal_6.jpg',
+          title: 'Bridal Glamour',
+          category: 'Bridal',
+          description: 'Elegant bridal makeup with a natural glow'
+        },
+        {
+          type: 'image',
+          src: '/images/bridal_7.jpg',
+          title: 'Bridal Glamour',
+          category: 'Bridal',
+          description: 'Elegant bridal makeup with a natural glow'
+        },
+        {
+          type: 'image',
+          src: '/images/bridal_9.jpg',
+          title: 'Bridal Glamour',
+          category: 'Bridal',
+          description: 'Elegant bridal makeup with a natural glow'
+        },
+        {
+          type: 'image',
+          src: '/images/masterclass_1.jpg',
+          title: 'Makeup Transformation',
+          category: 'Masterclass',
+          description: 'A masterclass makeup art'
+        },
+        {
+          type: 'image',
+          src: '/images/masterclass_2.jpg',
+          title: 'Makeup Transformation',
+          category: 'Masterclass',
+          description: 'A masterclass makeup art'
+        },
+          
+
+
+
+        {
+          type: 'image',
           src: '/images/image_2.jpg',
           alt: 'Makeup Art 2',
           title: 'Natural Beauty',
@@ -226,8 +265,36 @@ export default {
           description: 'Elegant event makeup'
         },
         {
+          type: 'video',
+          src: '/videos/event_1.mp4',
+          alt: 'Makeup Art 5',
+          title: 'Event Beauty',
+          description: 'Elegant event makeup'
+        },
+        {
           type: 'image',
           src: '/images/bridal_2.jpg',
+          alt: 'Bridal Makeup',
+          title: 'Bridal Beauty',
+          description: 'Timeless bridal looks'
+        },
+        {
+          type: 'video',
+          src: '/videos/bridal_1.mp4',
+          alt: 'Bridal Makeup',
+          title: 'Bridal Beauty',
+          description: 'Timeless bridal looks'
+        },
+        {
+          type: 'video',
+          src: '/videos/bridal_2.mp4',
+          alt: 'Bridal Makeup',
+          title: 'Bridal Beauty',
+          description: 'Timeless bridal looks'
+        },
+        {
+          type: 'video',
+          src: '/videos/bridal_3.mp4',
           alt: 'Bridal Makeup',
           title: 'Bridal Beauty',
           description: 'Timeless bridal looks'

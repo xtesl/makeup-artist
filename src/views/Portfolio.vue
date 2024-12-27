@@ -143,7 +143,91 @@ export default {
         },
         {
           type: 'image',
+          src: '/images/bridal_6.jpg',
+          title: 'Bridal Glamour',
+          category: 'Bridal',
+          description: 'Elegant bridal makeup with a natural glow'
+        },
+        {
+          type: 'image',
+          src: '/images/bridal_7.jpg',
+          title: 'Bridal Glamour',
+          category: 'Bridal',
+          description: 'Elegant bridal makeup with a natural glow'
+        },
+        {
+          type: 'image',
+          src: '/images/bridal_9.jpg',
+          title: 'Bridal Glamour',
+          category: 'Bridal',
+          description: 'Elegant bridal makeup with a natural glow'
+        },
+        {
+          type: 'image',
+          src: '/images/masterclass_1.jpg',
+          title: 'Makeup Transformation',
+          category: 'Masterclass',
+          description: 'A masterclass makeup art'
+        },
+        {
+          type: 'image',
+          src: '/images/masterclass_2.jpg',
+          title: 'Makeup Transformation',
+          category: 'Masterclass',
+          description: 'A masterclass makeup art'
+        },
+        {
+          type: 'image',
+          src: '/images/masterclass_3.jpg',
+          title: 'Makeup Transformation',
+          category: 'Masterclass',
+          description: 'A masterclass makeup art'
+        },
+        {
+          type: 'image',
+          src: '/images/event_5.jpg',
+          title: 'Evening Glam',
+          category: 'Events',
+          description: 'Sophisticated evening makeup'
+        },
+        {
+          type: 'image',
+          src: '/images/bridal_5.jpg',
+          title: 'Bridal Glamour',
+          category: 'Bridal',
+          description: 'Elegant bridal makeup with a natural glow'
+        },
+        {
+          type: 'image',
+          src: '/images/bridal_8.jpg',
+          title: 'Bridal Glamour',
+          category: 'Bridal',
+          description: 'Elegant bridal makeup with a natural glow'
+        },
+        {
+          type: 'image',
+          src: '/images/event_2.jpg',
+          title: 'Evening Glam',
+          category: 'Events',
+          description: 'Sophisticated evening makeup'
+        },
+        {
+          type: 'image',
+          src: '/images/event_3.jpg',
+          title: 'Evening Glam',
+          category: 'Events',
+          description: 'Sophisticated evening makeup'
+        },
+        {
+          type: 'image',
           src: '/images/others_1.jpg',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
+        {
+          type: 'image',
+          src: '/images/others_8.jpg',
           title: '',
           category: 'Others',
           description: ''
@@ -162,9 +246,31 @@ export default {
           category: 'Others',
           description: ''
         },
+
+        {
+          type: 'image',
+          src: '/images/others_7.jpg',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
+        {
+          type: 'image',
+          src: '/images/others_9.jpg',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
         {
           type: 'image',
           src: '/images/others_3.jpg',
+          title: '',
+          category: 'Others',
+          description: ''
+        },
+        {
+          type: 'image',
+          src: '/images/others.jpg',
           title: '',
           category: 'Others',
           description: ''
@@ -211,6 +317,7 @@ export default {
           category: 'Before/After',
           description: 'Complete makeup transformation process'
         },
+       
         {
           type: 'video',
           src: '/videos/behind_the_glam.mp4',
@@ -264,18 +371,12 @@ export default {
         // Add more items as needed...
         {
           type: 'image',
-          src: '/images/event_1.jpg',
+          src: '/images/event_4.jpg',
           title: 'Evening Glam',
           category: 'Events',
           description: 'Sophisticated evening makeup'
         },
-        {
-          type: 'image',
-          src: '/images/event_2.jpg',
-          title: 'Day Glam',
-          category: 'Events',
-          description: 'Event makeup'
-        },
+        
         {
           type: 'video',
           src: '/videos/behind_the_glam_2.mp4',
@@ -292,10 +393,38 @@ export default {
         },
         {
           type: 'video',
+          src: '/videos/bridal_1.mp4',
+          title: 'Bridal Beauty',
+          category: "Bridal",
+          description: 'Timeless bridal looks'
+        },
+        {
+          type: 'video',
+          src: '/videos/bridal_2.mp4',
+          title: 'Bridal Beauty',
+          category: "Bridal",
+          description: 'Timeless bridal looks'
+        },
+        {
+          type: 'video',
+          src: '/videos/bridal_3.mp4',
+          title: 'Bridal Beauty',
+          category: "Bridal",
+          description: 'Timeless bridal looks'
+        },
+        {
+          type: 'video',
           src: '/videos/behind_the_glam_3.mp4',
           title: 'Makeup Transformation',
           category: 'Behind the Glam',
           description: 'Complete makeup transformation process'
+        },
+        {
+          type: 'video',
+          src: '/videos/event_1.mp4',
+          title: 'Event Beauty',
+          category: "Events",
+          description: 'Elegant event makeup'
         },
         {
           type: 'image',
