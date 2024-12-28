@@ -16,11 +16,7 @@ const router = createRouter({
       component: Portfolio
     }
   ],
-  scrollBehavior(to, savedPosition) {
-
-    if (savedPosition) {
-      return savedPosition;
-    }
+  scrollBehavior(to) {
 
     if(to.hash){
       return {
