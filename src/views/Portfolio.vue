@@ -148,6 +148,52 @@ export default {
           category: 'Bridal',
           description: 'Elegant bridal makeup with a natural glow'
         },
+        
+        {
+          type: 'image',
+          src: '/images/event_7.jpeg',
+          title: 'Evening Glam',
+          category: 'Events',
+          description: 'Sophisticated evening makeup'
+        },
+        {
+          type: 'image',
+          src: '/images/event_8.jpeg',
+          title: 'Evening Glam',
+          category: 'Events',
+          description: 'Sophisticated evening makeup'
+        }, {
+          type: 'image',
+          src: '/images/event_9.jpeg',
+          title: 'Evening Glam',
+          category: 'Events',
+          description: 'Sophisticated evening makeup'
+        }, {
+          type: 'image',
+          src: '/images/event_10.jpeg',
+          title: 'Evening Glam',
+          category: 'Events',
+          description: 'Sophisticated evening makeup'
+        }, {
+          type: 'image',
+          src: '/images/event_11.jpeg',
+          title: 'Evening Glam',
+          category: 'Events',
+          description: 'Sophisticated evening makeup'
+        }, {
+          type: 'image',
+          src: '/images/event_12.jpeg',
+          title: 'Evening Glam',
+          category: 'Events',
+          description: 'Sophisticated evening makeup'
+        }, {
+          type: 'image',
+          src: '/images/event_13.jpeg',
+          title: 'Evening Glam',
+          category: 'Events',
+          description: 'Sophisticated evening makeup'
+        },
+
         {
           type: 'image',
           src: '/images/bridal_7.jpg',
@@ -204,6 +250,9 @@ export default {
           category: 'Bridal',
           description: 'Elegant bridal makeup with a natural glow'
         },
+
+
+
         {
           type: 'image',
           src: '/images/event_2.jpg',

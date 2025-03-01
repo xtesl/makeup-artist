@@ -191,16 +191,64 @@ export default {
           title: 'Sandra Owusu Boakye',
           description: 'Sandra Owusu Boakye'
         },
+      
         {
           type: 'image',
-          src: '/images/bridal_6.jpg',
-          title: 'Bridal Glamour',
-          category: 'Bridal',
-          description: 'Elegant bridal makeup with a natural glow'
+          src: '/images/event_7.jpeg',
+          alt: 'Makeup Art 4',
+          title: 'Event Glamour',
+          description: 'Special event makeup'
         },
         {
           type: 'image',
           src: '/images/bridal_7.jpg',
+          title: 'Bridal Glamour',
+          category: 'Bridal',
+          description: 'Elegant bridal makeup with a natural glow'
+        },
+
+        {
+          type: 'image',
+          src: '/images/event_8.jpeg',
+          alt: 'Makeup Art 4',
+          title: 'Event Glamour',
+          description: 'Special event makeup'
+        },
+        {
+          type: 'image',
+          src: '/images/event_9.jpeg',
+          alt: 'Makeup Art 4',
+          title: 'Event Glamour',
+          description: 'Special event makeup'
+        },
+        {
+          type: 'image',
+          src: '/images/event_10.jpeg',
+          alt: 'Makeup Art 4',
+          title: 'Event Glamour',
+          description: 'Special event makeup'
+        },{
+          type: 'image',
+          src: '/images/event_11.jpeg',
+          alt: 'Makeup Art 4',
+          title: 'Event Glamour',
+          description: 'Special event makeup'
+        },{
+          type: 'image',
+          src: '/images/event_12.jpeg',
+          alt: 'Makeup Art 4',
+          title: 'Event Glamour',
+          description: 'Special event makeup'
+        },{
+          type: 'image',
+          src: '/images/event_13.jpeg',
+          alt: 'Makeup Art 4',
+          title: 'Event Glamour',
+          description: 'Special event makeup'
+        },
+        {
+          type: 'image',
+          src: '/images/bridal_6.jpg',
           title: 'Bridal Glamour',
           category: 'Bridal',
           description: 'Elegant bridal makeup with a natural glow'
